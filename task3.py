@@ -117,13 +117,7 @@ def rabin_karp_search(main_string, substring):
 
     return -1
 
-
-
-
-
 # raw = "Цей алгоритм часто використовується в текстових редакторах та системах пошуку для ефективного знаходження підрядка в тексті."
-
-pattern = "пошук"
 
 
 
@@ -131,31 +125,78 @@ with open("art1.txt", "r") as fh:
     raw = fh.read()
     raw = raw.lower()    
 
+pattern = "використовувати"
+print("first file\nlong existing patern:", pattern, '\n')
 
 print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
 print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
 print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
 
-print("not existing patern")
-pattern = "dffssoiogu"
+pattern = "або"
+print("first file\nshort existing patern:", pattern, '\n')
+print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
+print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
+print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
+
+pattern = "метод"
+print("first file\nmiddle existing patern:", pattern, '\n')
 print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
 print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
 print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
 
 
+pattern = "dffssgdfgtroiogu"
+print("\nnot existing long patern:", pattern, '\n')
 
-print("second file")
+print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
+print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
+print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
+
+pattern = "ggf"
+print("\nnot existing short patern:", pattern, '\n')
+
+print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
+print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
+print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
+
+
 
 with open("art2.txt", "r", encoding="utf-8") as fh:
     raw = fh.read()
     raw = raw.lower()    
 
+pattern = "використовувати"
+print("\nsecond file\nexisting long patern:", pattern, '\n')
 print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
 print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
 print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
 
-print("not existing patern")
-pattern = "dffssoiogu"
+
+pattern = "або"
+print("\nsecond file\nexisting short patern:", pattern, '\n')
+print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
+print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
+print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
+
+
+pattern = "метод"
+print("\nsecond file\nmiddle existing patern:", pattern, '\n')
+
+print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
+print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
+print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
+
+pattern = "dffssgdfgtroiogu"
+print("\nnot existing long patern:", pattern, '\n')
+
+print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
+print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
+print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")
+
+
+pattern = "ggf"
+print("\nnot existing short patern:", pattern, '\n')
+
 print(timeit.timeit('kmp_search(raw, pattern)', number=1000, globals=globals()), " - knut_morris_pratt_search")
 print(timeit.timeit('boyer_moore_search(raw, pattern)', number=1000, globals=globals()), " - boyer_moore_search")
 print(timeit.timeit('rabin_karp_search(raw, pattern)', number=1000, globals=globals()), " - rabin_karp_search")

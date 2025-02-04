@@ -50,9 +50,9 @@ H.insert("banana", 30)
 H.insert("banana", 40)
 H.insert("banana", 50)
 
-print(H.get("apple"))   # Виведе: 10
-print(H.get("orange"))  # Виведе: 20
-print(H.get("banana"))  # Виведе: 30
+print(H.get("apple")) 
+print(H.get("orange"))
+print(H.get("banana"))
 print(H.delete("banana", 50))
 print(H.get("banana"))
 
